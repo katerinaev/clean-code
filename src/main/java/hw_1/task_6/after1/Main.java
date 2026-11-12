@@ -4,11 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Bird penguin = new Penguin();
         Bird sparrow = new Sparrow();
+        Duck duck = new Duck();
 
         penguin.makeSound();
-        ((Penguin) penguin).swim();
-
         sparrow.makeSound();
-        ((Sparrow) sparrow).fly();
+        duck.makeSound();
+
+        Swimmable swimmable = new Penguin();
+        Flyable flyable = new Sparrow();
+
+        swimmable.swim();
+        flyable.fly();
+
+        duck.swim();
+        duck.fly();
     }
 }

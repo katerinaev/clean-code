@@ -3,7 +3,7 @@ package hw_1.task_6.after1;
 public class Penguin extends Bird implements Swimmable {
     @Override
     public void makeSound() {
-        System.out.println("Quawk-quawk!");
+        System.out.println("Penguin: Quawk-quawk!");
     }
 
     @Override
