@@ -13,14 +13,9 @@ Each method returns the builder instance itself to support method chaining (a fl
 Shop class: This class represents the store and uses the builder to create orders. It utilizes the OrderBuilder to construct orders without needing to know the specific implementation details.
  */
 public class Order {
-    private List<String> products = new ArrayList<>();
-    private double discount;
-    private String paymentMethod;
-
-    public Order(double discount, String paymentMethod) {
-        this.discount = discount;
-        this.paymentMethod = paymentMethod;
-    }
+    private final List<String> products;
+    private final double discount;
+    private final String paymentMethod;
 
     public Order(OrderBuilder builder) {
         this.products = builder.products;
@@ -37,7 +32,7 @@ public class Order {
     }
 
     static class OrderBuilder {
-        private List<String> products = new ArrayList<>();
+        private final List<String> products = new ArrayList<>();
         private double discount;
         private String paymentMethod;
 

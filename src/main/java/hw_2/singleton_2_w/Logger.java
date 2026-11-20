@@ -20,7 +20,7 @@ one instance of the class exists within the application to handle all logging ta
 */
 public class Logger {
     private static Logger logger;
-    private PrintWriter writer;
+    private final PrintWriter writer;
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private Logger() {
@@ -31,14 +31,14 @@ public class Logger {
         }
     }
 
-    public static Logger getInstance() {
+    public static synchronized Logger getInstance() {
         if (logger == null) {
             logger = new Logger();
         }
         return logger;
     }
 
-    private void log(String level, String message) {
+    private synchronized void log(String level, String message) {
         String logEntry = String.format("%s [%s] - %s", LocalDateTime.now().format(DATE_FORMATTER),
                 level, message);
         writer.println(logEntry);

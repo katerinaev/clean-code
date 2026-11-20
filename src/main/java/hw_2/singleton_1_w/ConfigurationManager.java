@@ -29,7 +29,7 @@ public class ConfigurationManager {
         this.logFilePath = "app/logs/app.log";
     }
 
-    public static ConfigurationManager getInstance() {
+    public static synchronized ConfigurationManager getInstance() {
         if (configurationManager == null) {
             configurationManager = new ConfigurationManager();
         }

@@ -17,9 +17,12 @@ effectively converting the format (for example, from PDF to DOC).
 */
 public class Main {
     public static void main(String[] args) {
-        DocumentProcessor documentAdepter = new DocumentAdapter();
-        documentAdepter.process("hello.pdf");
-        documentAdepter.process("hi.doc");
-        documentAdepter.process("by.txt");
+        DOCProcessor docProcessor = new DOCProcessor();
+        PDFProcessor pdfProcessor = new PDFProcessor();
+
+        DocumentProcessor documentAdapter = new DocumentAdapter(docProcessor, pdfProcessor);
+        documentAdapter.process("report.pdf");
+        documentAdapter.process("presentation.doc");
+        documentAdapter.process("requirements.txt");
     }
 }

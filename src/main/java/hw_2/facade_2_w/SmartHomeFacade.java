@@ -1,9 +1,9 @@
 package hw_2.facade_2_w;
 
 public class SmartHomeFacade {
-    private Light light;
-    private AirConditioner airConditioner;
-    private SecuritySystem securitySystem;
+    private final Light light;
+    private final AirConditioner airConditioner;
+    private final SecuritySystem securitySystem;
 
     public SmartHomeFacade() {
         this.light = new Light();

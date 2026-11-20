@@ -1,9 +1,9 @@
 package hw_2.facade_1_w;
 
 public class DoorFacade {
-    private DoorOpen doorOpen;
-    private DoorClose doorClose;
-    private DoorLock doorLock;
+    private final DoorOpen doorOpen;
+    private final DoorClose doorClose;
+    private final DoorLock doorLock;
 
     public DoorFacade(DoorOpen doorOpen, DoorClose doorClose, DoorLock doorLock) {
         this.doorOpen = doorOpen;

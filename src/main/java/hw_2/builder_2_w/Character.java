@@ -7,17 +7,10 @@ and magic. The Builder pattern will help organize the character creation process
 these attributes to be set step-by-step without overloading the character class constructor.
 */
 public class Character {
-    private int health;
-    private int damage;
-    private int armor;
-    private int magic;
-
-    public Character(int health, int damage, int armor, int magic) {
-        this.health = health;
-        this.damage = damage;
-        this.armor = armor;
-        this.magic = magic;
-    }
+    private final int health;
+    private final int damage;
+    private final int armor;
+    private final int magic;
 
     public Character(CharacterBuilder builder) {
         this.health = builder.health;
